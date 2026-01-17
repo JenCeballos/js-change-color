@@ -1,15 +1,31 @@
-//I parte, cambiar color y texto a darkblue
+export function changeColor() {
+  const body = document.getElementById('background');
+  if (!body) return;
 
-function changeColor(){
-    //Escribe tu código aquí
-};
+  if (body.style.backgroundColor !== 'darkblue') {
+    body.style.backgroundColor = 'darkblue';
+  } else {
+    body.style.backgroundColor = 'red';
+  }
+}
 
-function changeText(){
-    //Escribe tu código aquí
-}; 
+export function changeText() {
+  const textElement = document.getElementById('text');
+  if (!textElement) return;
 
-function changeStyles(){
-    //Escribe tu código aquí
-};
+  const currentText = textElement.innerHTML.trim().toLowerCase();
+  
+  if (currentText !== 'darkblue') {
+    textElement.innerHTML = 'darkblue';
+  } else {
+    textElement.innerHTML = 'red';
+  }
+}
 
-export {changeColor, changeText, changeStyles}
+export function changeStyles() {
+  const body = document.getElementById('background');
+  const text = document.getElementById('text');
+  
+  if (body) body.style.backgroundColor = 'darkblue';
+  if (text) text.innerHTML = 'darkblue';
+}
