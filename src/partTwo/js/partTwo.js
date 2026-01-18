@@ -1,30 +1,22 @@
-export function changeColor() {
-  const body = document.getElementById('background');
-  if (!body) return;
+export const changeColor = () => {
+    const background = document.getElementById('background');
+    if (background.style.backgroundColor === "red" || background.style.backgroundColor === "rgb(255, 0, 0)") {
+        background.style.backgroundColor = "darkblue";
+    } else {
+        background.style.backgroundColor = "red";
+    }
+};
 
-  const currentColor = body.style.backgroundColor;
+export const changeText = () => {
+    const textElement = document.getElementById('text');
+    if (textElement.innerHTML === "red") {
+        textElement.innerHTML = "darkblue";
+    } else {
+        textElement.innerHTML = "red";
+    }
+};
 
-  if (currentColor === 'red' || currentColor === 'rgb(255, 0, 0)') {
-    body.style.backgroundColor = 'darkblue';
-  } else {
-    body.style.backgroundColor = 'red';
-  }
-}
-
-export function changeText() {
-  const textElement = document.getElementById('text');
-  if (!textElement) return;
-
-  const currentText = textElement.innerHTML.trim().toLowerCase();
-
-  if (currentText === 'red') {
-    textElement.innerHTML = 'darkblue';
-  } else {
-    textElement.innerHTML = 'red';
-  }
-}
-
-export function changeStyles() {
-  changeColor();
-  changeText();
-}
+export const changeStyles = () => {
+    changeColor();
+    changeText();
+};
